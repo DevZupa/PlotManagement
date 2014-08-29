@@ -9,7 +9,7 @@ _toRemove = (_friends select _pos);
 _newList = [];
 {
 	if(_x select 0  != _toRemove select 0)then{
-	_newList = _newList + [_toRemove];
+	_newList = _newList + [_x];
 	};
 } forEach _friends;
 _thePlot setVariable ["plotfriends", _newList, true];
