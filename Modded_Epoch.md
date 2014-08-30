@@ -160,7 +160,7 @@ After that, add
 	if ((_isModular || _isModularDoor) && !((getPlayerUID player) in _allowed)) exitWith { cutText ["You are not allowed to remove this structure." , "PLAIN DOWN"]; };
 	
 **STEP 7 (Modifying player_build.sqf AND player_upgrade.sqf)**<br>
-BOTH OF THESE FILES NEED THE SAME EDIT, MAKE SURE YOU DO BOTH FILES!!!!<br>
+ALL THREE OF THESE FILES NEED THE SAME EDIT, MAKE SURE YOU DO ALL FILES!!!!<br>
 Find
 	
 	_friendlies		= player getVariable ["friendlyTo",[]];
@@ -182,12 +182,9 @@ Replace that with
 	if(_builder in _fuid) then {
 		_canBuildOnPlot = true;
 	};
-	
-**STEP 8 (Modifying player_buildingDowngrade.sqf)**<br>
 
-
-**STEP 9 This one is in your dayz_server.pbo (Modifying server_monitor.sqf)**<br>
-**9 A**<br>
+**STEP 8 This one is in your dayz_server.pbo (Modifying server_monitor.sqf)**<br>
+**8 A**<br>
 Find
 	
 	_object setVariable ["ObjectID", _idKey, true];
@@ -198,7 +195,7 @@ After that, add
 	_object setVariable ["plotfriends", _intentory, true];
 	};
 	
-**9 B**<br>
+**8 B**<br>
 Find
 
 	if (count _intentory > 0) then {
@@ -207,7 +204,7 @@ Replace that with
 
 	if ((count _intentory > 0) && !(typeOf( _object) == "Plastic_Pole_EP1_DZ")) then {
 	
-**STEP 10 Again, this is in your dayz_server.pbo (Modifying server_updateObject.sqf)**<br>
+**STEP 9 Again, this is in your dayz_server.pbo (Modifying server_updateObject.sqf)**<br>
 Find
 
 	_inventory = [
