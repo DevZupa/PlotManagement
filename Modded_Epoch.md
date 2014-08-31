@@ -159,7 +159,7 @@ After that, add
 
 	if ((_isModular || _isModularDoor) && !((getPlayerUID player) in _allowed)) exitWith { cutText ["You are not allowed to remove this structure." , "PLAIN DOWN"]; };
 	
-**STEP 7 (Modifying player_build.sqf AND player_upgrade.sqf)**<br>
+**STEP 7 (Modifying player_build.sqf, player_upgrade.sqf, and player_buildingDowngrade.sqf)**<br>
 ALL THREE OF THESE FILES NEED THE SAME EDIT, MAKE SURE YOU DO ALL FILES!!!!<br>
 Find
 	
