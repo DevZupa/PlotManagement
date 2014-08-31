@@ -37,6 +37,14 @@ Add
 
 	s_player_plotManagement = -1;
 	
+**Note** If you don't already have a custom variables.sqf then create one and call if after the standard variables.sqf in your mission init.sqf file. <br>
+Add this to it
+	//Player self-action handles
+	dayz_resetSelfActions = {
+		s_player_plotManagement = -1;
+	};
+	call dayz_resetSelfActions;
+	
 
 **STEP 5 (Modifying fn_selfActions.sqf)**<br>
 **5 A**<br>
@@ -117,12 +125,10 @@ Replace that with
 **5 D**<br>
 Find
 
-	player removeAction s_player_warndog;
-	s_player_warndog = -1;
-	player removeAction s_player_followdog;
-	s_player_followdog = -1;
+	} else {
+		//Engineering
 	
-Above that, add
+After that, add
 
 	player removeAction s_player_plotManagement;
 	s_player_plotManagement = -1;
