@@ -133,6 +133,13 @@ After that, add
 	player removeAction s_player_plotManagement;
 	s_player_plotManagement = -1;
 	
+**5 E**
+Remember to change the paths to any files you've moved to your mission folder!
+
+	player_upgrade.sqf
+	player_buildingDowngrade.sqf
+	player_buildingDowngrade.sqf
+	
 **STEP 6 (Modifying remove.sqf)**<br>
 Find
 	
