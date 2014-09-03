@@ -138,7 +138,7 @@ Remember to change the paths to any files you've moved to your mission folder!
 
 	player_upgrade.sqf
 	player_buildingDowngrade.sqf
-	player_buildingDowngrade.sqf
+	player_upgrade.sqf"
 	
 **STEP 6 (Modifying remove.sqf)**<br>
 Find
