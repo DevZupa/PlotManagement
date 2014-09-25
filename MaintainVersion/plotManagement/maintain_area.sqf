@@ -26,13 +26,12 @@ _objects = _objects_filtered;
 _count = count _objects;
 
 if (_count == 0) exitWith {
-			_ctrl = ((uiNamespace getVariable "PlotManagement") displayCtrl 7012);
-			_result =  format["Objects to maintain: %1" , _count];
-			_ctrl ctrlSetText   _result;		
-			_ctrl = ((uiNamespace getVariable "PlotManagement") displayCtrl 7013);
-			_result =  format["No money needed.", " "];
-			
-			_ctrl ctrlSetText   _result;	
+	_ctrl = ((uiNamespace getVariable "PlotManagement") displayCtrl 7012);
+	_result =  format["Objects to maintain: %1" , _count];
+	_ctrl ctrlSetText   _result;		
+	_ctrl = ((uiNamespace getVariable "PlotManagement") displayCtrl 7013);
+	_result =  format["No money needed.", " "];	
+	_ctrl ctrlSetText   _result;	
 	DZE_ActionInProgress = false;
 	s_player_maintain_area = -1;
 	s_player_maintain_area_preview = -1;
@@ -60,8 +59,7 @@ switch true do {
 
 _option = _this select 3;
 switch _option do {
-	case "maintain": {
-		
+	case "maintain": {		
 		_missing = "";
 		_missingQty = 0;
 		_proceed = true;
@@ -105,8 +103,7 @@ switch _option do {
 				publicVariableServer "PVDZE_maintainArea";										
 				_ctrl = ((uiNamespace getVariable "PlotManagement") displayCtrl 7012);
 				_result =  format["SUCCESS : Objects maintained: %1" , _count];
-				_ctrl ctrlSetText   _result;
-			
+				_ctrl ctrlSetText   _result;		
 				_ctrl = ((uiNamespace getVariable "PlotManagement") displayCtrl 7013);
 				_result =  format["SUCCESS : Price maintained: %1 %2 !" , (_requirements select 0) select 1, (_requirements select 0) select 0];
 				_ctrl ctrlSetText   _result;
@@ -116,15 +113,12 @@ switch _option do {
 			};
 		} else {
 			_textMissing = getText(configFile >> "CfgMagazines" >> _missing >> "displayName");
-_ctrl = ((uiNamespace getVariable "PlotManagement") displayCtrl 7012);
-				_result =  format["FAILED : Objects maintained: 0" , _count];
-				_ctrl ctrlSetText   _result;
-			
-				_ctrl = ((uiNamespace getVariable "PlotManagement") displayCtrl 7013);
-				_result =  format["FAILED : Money needed: %1 %2 !" , (_requirements select 0) select 1, (_requirements select 0) select 0];
-
-				_ctrl ctrlSetText   _result;
-			
+			_ctrl = ((uiNamespace getVariable "PlotManagement") displayCtrl 7012);
+			_result =  format["FAILED : Objects maintained: 0" , _count];
+			_ctrl ctrlSetText   _result;			
+			_ctrl = ((uiNamespace getVariable "PlotManagement") displayCtrl 7013);
+			_result =  format["FAILED : Money needed: %1 %2 !" , (_requirements select 0) select 1, (_requirements select 0) select 0];
+			_ctrl ctrlSetText   _result;			
 			cutText [format[(localize "STR_EPOCH_ACTIONS_6"), _missingQty, _textMissing], "PLAIN DOWN"];
 		};
 	};
@@ -138,17 +132,11 @@ _ctrl = ((uiNamespace getVariable "PlotManagement") displayCtrl 7012);
 				_cost = _cost + " and ";
 			};
 			_cost = _cost + (str(_countIn) + " of " + _itemText);
-		} count _requirements;
-		
-		
-		
-		
-		
+		} count _requirements;					
 		cutText [format[(localize "STR_EPOCH_ACTIONS_7"), _count, _cost], "PLAIN DOWN"];
 		_ctrl = ((uiNamespace getVariable "PlotManagement") displayCtrl 7012);
 		_result =  format["Objects to maintain: %1" , _count];
-		_ctrl ctrlSetText   _result;
-		
+		_ctrl ctrlSetText   _result;		
 		_ctrl = ((uiNamespace getVariable "PlotManagement") displayCtrl 7013);
 	    _result =  format["Price to maintain: %1 %2" ,  (_requirements select 0) select 1, (_requirements select 0) select 0];
 		_ctrl ctrlSetText   _result;					
