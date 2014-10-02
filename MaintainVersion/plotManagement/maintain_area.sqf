@@ -57,7 +57,7 @@ switch true do {
 
 
 
-_option = _this select 3;
+_option = _this select 0;
 switch _option do {
 	case "maintain": {		
 		_missing = "";
