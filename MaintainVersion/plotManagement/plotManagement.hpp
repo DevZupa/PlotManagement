@@ -61,8 +61,22 @@ class PlotManagement
 			x = 0.31 * safezoneW + safezoneX;
 			y = 0.30 * safezoneH + safezoneY;
 			w = 0.30 * safezoneW;
-			h = 0.03 * safezoneH;
+			h = 0.05 * safezoneH;			
 			colorText[] = {1,1,1,1};
+			
+		};
+		
+		class RscText_7013:  RscStructuredText
+		{
+			idc = 7013;
+			text = "";
+			x = 0.30 * safezoneW + safezoneX;
+			y = 0.15 * safezoneH + safezoneY;
+			w = 0.30 * safezoneW;
+			h = 0.03 * safezoneH;
+			class Attributes {
+				align = "right";
+			};
 		};
 		
 		class RscText_7013: RscTextT
@@ -79,7 +93,7 @@ class PlotManagement
 		
 		class RscText_7008: RscTextT
 		{
-			idc = 7008;
+			idc = -1;
 			text = "Humans Nearby";
 			x = 0.31 * safezoneW + safezoneX;
 			y = 0.38 * safezoneH + safezoneY;
@@ -89,7 +103,7 @@ class PlotManagement
 		};		
 		class RscText_7003: RscTextT
 		{
-			idc = 7003;
+			idc = -1;
 			text = "PlotFriends";
 			x = 0.45 * safezoneW + safezoneX;
 			y = 0.38 * safezoneH + safezoneY;
@@ -121,7 +135,7 @@ class PlotManagement
 		};
 		class RscShortcutButton_7004: RscShortcutButton
 		{
-			idc = 7004;
+			idc = -1;
 			text = "Add";
 			x = 0.33 * safezoneW + safezoneX;
 			y = 0.70 * safezoneH + safezoneY;
@@ -130,7 +144,7 @@ class PlotManagement
 		};
 		class RscShortcutButton_7005: RscShortcutButton
 		{
-			idc = 7005;
+			idc = -1;
 			text = "Delete";
 			x = 0.47 * safezoneW + safezoneX;
 			y = 0.70 * safezoneH + safezoneY;
@@ -139,7 +153,7 @@ class PlotManagement
 		};	
 		class RscShortcutButton_7006: RscShortcutButton
 		{
-			idc = 7006;
+			idc = -1;
 			text = "Close";
 			x = 0.40 * safezoneW + safezoneX;
 			y = 0.74 * safezoneH + safezoneY;
