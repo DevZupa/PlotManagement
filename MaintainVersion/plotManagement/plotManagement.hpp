@@ -68,7 +68,7 @@ class PlotManagement
 		
 		class RscText_7014:  RscStructuredText
 		{
-			idc = 7013;
+			idc = 7014;
 			text = "";
 			x = 0.30 * safezoneW + safezoneX;
 			y = 0.15 * safezoneH + safezoneY;
