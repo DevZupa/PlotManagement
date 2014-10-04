@@ -1,9 +1,8 @@
 private ["_newWealth","_missing","_missingQty","_proceed","_itemIn","_countIn","_target","_objectClasses","_range","_objects","_requirements","_count","_cost","_option"];
 disableSerialization;
 
-_target = cursorTarget;
 _range = DZE_PlotPole select 0;
-_objects = nearestObjects [_target, "AllVehicles", _range];
+_objects = (position player) nearEntities ["AllVehicles", _range];
 _count = count (_objects);
 
 _colour = "#ffffff";
