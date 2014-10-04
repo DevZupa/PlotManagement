@@ -66,7 +66,7 @@ class PlotManagement
 			
 		};
 		
-		class RscText_7013:  RscStructuredText
+		class RscText_7014:  RscStructuredText
 		{
 			idc = 7013;
 			text = "";
