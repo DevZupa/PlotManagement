@@ -2,8 +2,7 @@ private ["_newWealth","_missing","_missingQty","_proceed","_itemIn","_countIn","
 disableSerialization;
 
 _range = DZE_PlotPole select 0;
-_objects = (position player) nearEntities [DZE_maintainClasses, _range];
-_count = count (_objects);
+_count = count ((getPosATL player) nearObjects ["All",_range]);
 
 _colour = "#ffffff";
 
