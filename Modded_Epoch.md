@@ -109,18 +109,60 @@ Find
 
 Replace that with
 
-	//Allow owners to delete modulars
-        if(_isModular) then {
-                if(_hasToolbox && "ItemCrowbar" in _itemsPlayer) then {
-                        _player_deleteBuild = true;
-                };
-        };
+	///Allow owners to delete modulars
+    if(_isModular) then {
+            if(_hasToolbox && "ItemCrowbar" in _itemsPlayer) then {
+				_findNearestPoles = nearestObjects[player, ["Plastic_Pole_EP1_DZ"], DZE_PlotPole select 0];
+				_IsNearPlot = count (_findNearestPoles);
+				_fuid  = [];
+				_allowed = [];
+				if(_IsNearPlot > 0)then{
+					_thePlot = _findNearestPoles select 0;
+					_owner =  _thePlot getVariable ["ownerPUID","010"];
+					_friends = _thePlot getVariable ["plotfriends", []];
+					{
+					  _friendUID = _x select 0;
+					  _fuid  =  _fuid  + [_friendUID];
+					} forEach _friends;
+					_allowed = [_owner];    
+					_allowed = [_owner] +  _fuid;	
+					if ( _playerUID in _allowed && _ownerID in _allowed ) then {  // // If u want that the object also belongs to someone on the plotpole.
+						_player_deleteBuild = true;
+					};					
+				}else{
+					if(_ownerID == _playerUID)then{
+						_player_deleteBuild = true;
+					};
+				};						                  
+            };
+    };
 	//Allow owners to delete modular doors without locks
-        if(_isModularDoor) then {
-                if(_hasToolbox && "ItemCrowbar" in _itemsPlayer) then {
-                        _player_deleteBuild = true;
-                };      
-        };
+    if(_isModularDoor) then {
+            if(_hasToolbox && "ItemCrowbar" in _itemsPlayer) then {			
+				_findNearestPoles = nearestObjects[player, ["Plastic_Pole_EP1_DZ"], DZE_PlotPole select 0];
+				_IsNearPlot = count (_findNearestPoles);
+				_fuid  = [];
+				_allowed = [];
+				if(_IsNearPlot > 0)then{
+					_thePlot = _findNearestPoles select 0;
+					_owner =  _thePlot getVariable ["ownerPUID","010"];
+					_friends = _thePlot getVariable ["plotfriends", []];
+					{
+					  _friendUID = _x select 0;
+					  _fuid  =  _fuid  + [_friendUID];
+					} forEach _friends;
+					_allowed = [_owner];    
+					_allowed = [_owner] +  _fuid;	
+					if ( _playerUID in _allowed && _ownerID in _allowed) then { //  // If u want that the object also belongs to someone on the plotpole.
+						_player_deleteBuild = true;
+					};					
+				}else{
+					if(_ownerID == _playerUID)then{
+						_player_deleteBuild = true;
+					};
+				};								
+            };      
+    };
 
 **5 D**<br>
 Find
@@ -141,36 +183,8 @@ Remember to change the paths to any files you've moved to your mission folder!
 	player_upgrade.sqf"
 	
 **STEP 6 (Modifying remove.sqf)**<br>
-Find
-	
-	if(DZE_ActionInProgress) exitWith { cutText [(localize "str_epoch_player_88") , "PLAIN DOWN"]; };
-	
-After that, add
 
-	_findNearestPoles = nearestObjects[player, ["Plastic_Pole_EP1_DZ"], DZE_PlotPole select 0];
-	_IsNearPlot = count (_findNearestPoles);
-	_fuid  = [];
-	_allowed = [];
-	if(_IsNearPlot > 0)then{
-	_thePlot = _findNearestPoles select 0;
-	_owner =  _thePlot getVariable ["CharacterID","0"];
-	_friends = _thePlot getVariable ["plotfriends", []];
-
-	{
-	  _friendUID = _x select 0;
-	  _fuid  =  _fuid  + [_friendUID];
-	} forEach _friends;
-
-	_allowed = [_owner];	
-	_allowed = [_owner] +  _fuid;
-
-	};
-
-	_obj = _this select 3;
-	_isModular = _obj isKindOf "ModularItems";
-	_isModularDoor = _obj in ["Land_DZE_WoodDoor","Land_DZE_LargeWoodDoor","Land_DZE_GarageWoodDoor","CinderWallDoor_DZ","CinderWallDoorSmall_DZ"];
-
-	if ((_isModular || _isModularDoor) && !((getPlayerUID player) in _allowed)) exitWith { cutText ["You are not allowed to remove this structure." , "PLAIN DOWN"]; };
+NO CHANGES NEEDED, the effect has been realised in 5 C.
 	
 **STEP 7 (Modifying player_build.sqf, player_upgrade.sqf, and player_buildingDowngrade.sqf)**<br>
 ALL THREE OF THESE FILES NEED THE SAME EDIT, MAKE SURE YOU DO ALL FILES!!!!<br>
