@@ -25,7 +25,7 @@ class PlotManagement
 			colorText[] = {1,1,1,1};			
 		};
 		
-		class RscShortcutButton_7009: RscShortcutButton
+		class RscShortcutButton_7009: Zupa_RscButtonMenu
 		{
 			idc = -1;
 			text = "Dome";
@@ -35,7 +35,7 @@ class PlotManagement
 			onButtonClick = "call PlotPreview;";
 		};
 		
-				class RscShortcutButton_7010: RscShortcutButton
+				class RscShortcutButton_7010: Zupa_RscButtonMenu
 		{
 			idc = -1;
 			text = "Refresh";
@@ -45,7 +45,7 @@ class PlotManagement
 			onButtonClick = "[""preview""] call MaintainPlot;";
 		};
 		
-				class RscShortcutButton_7011: RscShortcutButton
+				class RscShortcutButton_7011: Zupa_RscButtonMenu
 		{
 			idc = -1;
 			text = "Maintain";
@@ -133,7 +133,7 @@ class PlotManagement
 			soundSelect[] = {"",0.1,1};
 			colorBackground[] = {0.1,0.1,0.1,0.8};
 		};
-		class RscShortcutButton_7004: RscShortcutButton
+		class RscShortcutButton_7004: Zupa_RscButtonMenu
 		{
 			idc = -1;
 			text = "Add";
@@ -142,7 +142,7 @@ class PlotManagement
 			w = 0.08 * safezoneW;
 			onButtonClick = "[(lbCurSel 7001)] call PlotAddFriend;";
 		};
-		class RscShortcutButton_7005: RscShortcutButton
+		class RscShortcutButton_7005: Zupa_RscButtonMenu
 		{
 			idc = -1;
 			text = "Delete";
@@ -151,7 +151,7 @@ class PlotManagement
 			w = 0.08 * safezoneW;
 			onButtonClick = "[(lbCurSel 7002)] call PlotRemoveFriend;";
 		};	
-		class RscShortcutButton_7006: RscShortcutButton
+		class RscShortcutButton_7006: Zupa_RscButtonMenu
 		{
 			idc = -1;
 			text = "Close";
