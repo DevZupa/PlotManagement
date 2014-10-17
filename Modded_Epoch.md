@@ -184,7 +184,7 @@ Remember to change the paths to any files you've moved to your mission folder!
 	
 **STEP 6 (Modifying remove.sqf)**<br>
 
-NO CHANGES NEEDED, the effect has been realised in 5 C.
+NO CHANGES NEEDED, the effect has been realised in 5 C. RESTORE TO THE NORMAL REMOVES.SQF
 	
 **STEP 7 (Modifying player_build.sqf, player_upgrade.sqf, and player_buildingDowngrade.sqf)**<br>
 ALL THREE OF THESE FILES NEED THE SAME EDIT, MAKE SURE YOU DO ALL FILES!!!!<br>
