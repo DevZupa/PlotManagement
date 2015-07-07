@@ -14,7 +14,7 @@ _obj = false;	_tmp = -1;
 if (!isNil "PP_Marks") then {
 	if (((PP_Marks select 0) distance _thePlot) < 10) then {  _obj = true; };
 	_tmp = (PP_Marks select 0) distance _thePlot;
-	{ deleteVehicle _x; } count PP_Marks;	PP_Marks = nil;		sleep 1;
+	{ deleteVehicle _x; } count PP_Marks;	PP_Marks = nil;
 };
 //-----------------------------------------------------------------------------------------
 if ((isNil "PP_Marks") && (!_obj)) then {
